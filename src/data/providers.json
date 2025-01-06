@@ -1,0 +1,50 @@
+[
+  {
+    "id": "1",
+    "name": "Evolution",
+    "numberOfGames": 312,
+    "image": "https://res.cloudinary.com/duzbxwdum/image/upload/v1736176851/samples/aaaaa/434b7a89-5c2e-4c07-9b7e-56546b6f26b0.svg_gknc2u.png"
+  },
+  {
+    "id": "2",
+    "name": "Spribe",
+    "numberOfGames": 12,
+    "image": "https://res.cloudinary.com/duzbxwdum/image/upload/v1736177628/samples/aaaaa/2_cyzbv0.png"
+  },
+  {
+    "id": "3",
+    "name": "VeliPlay",
+    "numberOfGames": 9,
+    "image": "https://res.cloudinary.com/duzbxwdum/image/upload/v1736177715/samples/aaaaa/3_u7b80a.png"
+  },
+  {
+    "id": "4",
+    "name": "Turbo Games",
+    "numberOfGames": 36,
+    "image": "https://res.cloudinary.com/duzbxwdum/image/upload/v1736177714/samples/aaaaa/4_hh6dwo.png"
+  },
+  {
+    "id": "5",
+    "name": "SmartSoft",
+    "numberOfGames": 37,
+    "image": "https://res.cloudinary.com/duzbxwdum/image/upload/v1736177715/samples/aaaaa/5_b12yzx.png"
+  },
+  {
+    "id": "6",
+    "name": "100HP Gaming",
+    "numberOfGames": 7,
+    "image": "https://res.cloudinary.com/duzbxwdum/image/upload/v1736177715/samples/aaaaa/6_jwz5ud.png"
+  },
+  {
+    "id": "7",
+    "name": "BGaming",
+    "numberOfGames": 166,
+    "image": "https://res.cloudinary.com/duzbxwdum/image/upload/v1736177715/samples/aaaaa/7_jz2qrc.png"
+  },
+  {
+    "id": "8",
+    "name": "Wazdan",
+    "numberOfGames": 199,
+    "image": "https://res.cloudinary.com/duzbxwdum/image/upload/v1736177715/samples/aaaaa/8_u5gkr3.png"
+  }
+]

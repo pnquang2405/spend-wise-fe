@@ -1,0 +1,22 @@
+[
+  {
+    "id": "1",
+    "name": "Game 1",
+    "slug": "game-1"
+  },
+  {
+    "id": "2",
+    "name": "Game 2",
+    "slug": "game-2"
+  },
+  {
+    "id": "3",
+    "name": "Game 3",
+    "slug": "game-3"
+  },
+  {
+    "id": "4",
+    "name": "Game 4",
+    "slug": "game-4"
+  }
+]
