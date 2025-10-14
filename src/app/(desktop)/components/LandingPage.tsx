@@ -1,11 +1,7 @@
-// components/LandingPage.tsx
+import Link from 'next/link'
 import React from 'react'
 
-interface LandingPageProps {
-  onLogin: () => void
-}
-
-const LandingPage: React.FC<LandingPageProps> = ({ onLogin }) => {
+const LandingPage = () => {
   return (
     <div>
       <header className="bg-white shadow-sm sticky top-0 z-50">
@@ -23,12 +19,11 @@ const LandingPage: React.FC<LandingPageProps> = ({ onLogin }) => {
             <a href="#contact" className="text-gray-600 hover:text-sky-500 px-3 py-2">
               Liên hệ
             </a>
-            <button
-              onClick={onLogin}
-              className="bg-sky-500 text-white font-semibold px-4 py-2 rounded-lg hover:bg-sky-600 transition duration-300 ml-4"
-            >
-              Đăng nhập
-            </button>
+            <Link href="/user/login">
+              <button className="bg-sky-500 text-white font-semibold px-4 py-2 rounded-lg hover:bg-sky-600 transition duration-300 ml-4">
+                Đăng nhập
+              </button>
+            </Link>
           </div>
         </nav>
       </header>
@@ -48,12 +43,11 @@ const LandingPage: React.FC<LandingPageProps> = ({ onLogin }) => {
               chi phí với bạn bè một cách dễ dàng.
             </p>
             <div className="mt-8">
-              <button
-                onClick={onLogin}
-                className="bg-emerald-500 text-white font-bold px-8 py-3 rounded-full hover:bg-emerald-600 transition duration-300 text-lg shadow-lg"
-              >
-                Bắt đầu miễn phí
-              </button>
+              <Link href="/user/login">
+                <button className="bg-emerald-500 text-white font-bold px-8 py-3 rounded-full hover:bg-emerald-600 transition duration-300 text-lg shadow-lg">
+                  Bắt đầu miễn phí
+                </button>
+              </Link>
             </div>
           </div>
         </section>

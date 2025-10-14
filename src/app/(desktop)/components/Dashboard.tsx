@@ -1,4 +1,3 @@
-// components/Dashboard.tsx
 import React from 'react'
 import Image from 'next/image'
 
@@ -17,9 +16,6 @@ const Dashboard: React.FC<DashboardProps> = ({ onLogout }) => {
             <i className="fas fa-wallet mr-2"></i>SpendWise
           </div>
         </div>
-
-        {/* ... Rest of the Dashboard component remains the same */}
-        {/* ... Phần còn lại của component Dashboard giữ nguyên ... */}
         <nav className="flex-1 overflow-y-auto">
           <ul className="py-4">
             <li className="px-6 py-2">
