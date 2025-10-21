@@ -19,7 +19,7 @@ const LandingPage = () => {
             <a href="#contact" className="text-gray-600 hover:text-sky-500 px-3 py-2">
               Liên hệ
             </a>
-            <Link href="/user/login">
+            <Link href="/auth/login">
               <button className="bg-sky-500 text-white font-semibold px-4 py-2 rounded-lg hover:bg-sky-600 transition duration-300 ml-4">
                 Đăng nhập
               </button>
@@ -43,7 +43,7 @@ const LandingPage = () => {
               chi phí với bạn bè một cách dễ dàng.
             </p>
             <div className="mt-8">
-              <Link href="/user/login">
+              <Link href="/auth/login">
                 <button className="bg-emerald-500 text-white font-bold px-8 py-3 rounded-full hover:bg-emerald-600 transition duration-300 text-lg shadow-lg">
                   Bắt đầu miễn phí
                 </button>

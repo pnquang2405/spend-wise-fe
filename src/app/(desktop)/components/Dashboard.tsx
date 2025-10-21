@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import Image from 'next/image'
 
@@ -8,10 +10,8 @@ interface DashboardProps {
 const Dashboard: React.FC<DashboardProps> = ({ onLogout }) => {
   return (
     <div className="flex h-screen bg-gray-100">
-      {/* Sidebar */}
       <aside className="w-64 bg-white flex-shrink-0 flex flex-col border-r">
         <div className="h-16 flex items-center justify-center border-b">
-          {/* Thay thế gradient-text */}
           <div className="text-2xl font-bold bg-gradient-to-r from-emerald-500 to-sky-500 text-transparent bg-clip-text">
             <i className="fas fa-wallet mr-2"></i>SpendWise
           </div>

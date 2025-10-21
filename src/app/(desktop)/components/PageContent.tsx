@@ -1,14 +1,18 @@
 'use client'
 
-import { useState } from 'react'
+import { useAuth } from '@/store/auth-store'
 import Dashboard from './Dashboard'
 import LandingPage from './LandingPage'
 
 export default function PageContent() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const profile = useAuth((state) => state.profile)
+  console.log('profile', profile)
+
+  const logout = useAuth((state) => state.logout)
+
   const handleLogout = () => {
-    setIsLoggedIn(false)
+    logout()
   }
 
-  return <>{isLoggedIn ? <Dashboard onLogout={handleLogout} /> : <LandingPage />}</>
+  return <>{profile ? <Dashboard onLogout={handleLogout} /> : <LandingPage />}</>
 }

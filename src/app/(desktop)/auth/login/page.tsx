@@ -10,7 +10,7 @@ const AuthPage = () => {
   const toggleView = () => setIsLoginView(!isLoginView)
 
   const handleLoginSuccess = () => {
-    router.push('/dashboard')
+    router.push('/')
   }
 
   return (

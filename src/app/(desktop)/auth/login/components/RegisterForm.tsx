@@ -9,7 +9,6 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { register } from '@/lib/apis/auth'
-import { setAuth } from '@/lib/cookie'
 
 interface RegisterFormProps {
   onLoginSuccess: () => void
@@ -36,7 +35,6 @@ export function RegisterForm({ onLoginSuccess, onShowLogin }: RegisterFormProps)
       console.log('response', response)
 
       if (response?.code === 200) {
-        setAuth(response.data)
         onLoginSuccess()
       } else setApiError(response.errors)
     } catch (err: any) {

@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { Be_Vietnam_Pro, Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
 import DefaultLayout from '@/layouts/default'
-import NextTopLoader from 'nextjs-toploader'
+import ClientLoader from '@/components/client-loader'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -44,8 +44,8 @@ export default function RootLayout({
           referrerPolicy="no-referrer"
         />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} ${beVietnamPro.className} antialiased`}>
-        <NextTopLoader color="#3555FF" showSpinner={false} />
+      <body className={`${geistSans.className} ${geistMono.className} ${beVietnamPro.className} antialiased`}>
+        <ClientLoader />
         <DefaultLayout>{children}</DefaultLayout>
       </body>
     </html>

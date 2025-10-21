@@ -13,7 +13,7 @@ interface CustomAxiosRequestConfig extends InternalAxiosRequestConfig {
 
 const defaultCacheTime = 120 // 2m
 const isServer = typeof window === 'undefined'
-const prefixVersion = '/api/v2'
+const prefixVersion = process.env.NEXT_PUBLIC_PREFIX_VERSION_API || ''
 const baseURL = process.env.NEXT_PUBLIC_API_BASE_URL + prefixVersion
 const localURL = (process.env.NEXT_PUBLIC_API_BASE_SSR_URL || process.env.NEXT_PUBLIC_API_BASE_URL) + prefixVersion
 
@@ -33,21 +33,18 @@ export const http = axios.create({
   headers: {
     'Content-Type': 'application/json',
   },
+  withCredentials: true,
 })
 http.interceptors.request.use(
   async (config: CustomAxiosRequestConfig) => {
     config.metadata = { startTime: new Date() }
 
-    if (!isServer && !IGNORE_AUTH_PATHS.includes(config.url || '')) {
-      const token = getCookie('token')
-      if (token) {
-        config.headers['Authorization'] = `Bearer ${token}`
-      }
-      const tokenTrial = getCookie('token_trial')
-      if (tokenTrial) {
-        config.headers['Authorization'] = `Bearer ${tokenTrial}`
-      }
-    }
+    // if (!isServer && !IGNORE_AUTH_PATHS.includes(config.url || '')) {
+    //   const token = getCookie('token')
+    //   if (token) {
+    //     config.headers['Authorization'] = `Bearer ${token}`
+    //   }
+    // }
 
     return config
   },
