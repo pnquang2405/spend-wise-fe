@@ -1,8 +1,8 @@
 'use client'
 import React, { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { RegisterForm } from './components/RegisterForm'
-import { LoginForm } from './components/LoginForm'
+import { RegisterForm } from './components/register-form'
+import { LoginForm } from './components/login-form'
 
 const AuthPage = () => {
   const [isLoginView, setIsLoginView] = useState(true)

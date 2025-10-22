@@ -9,6 +9,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { register } from '@/lib/apis/auth'
+import { useAuth } from '@/store/auth-store'
 
 interface RegisterFormProps {
   onLoginSuccess: () => void
@@ -17,6 +18,7 @@ interface RegisterFormProps {
 
 export function RegisterForm({ onLoginSuccess, onShowLogin }: RegisterFormProps) {
   const [apiError, setApiError] = useState<string | null>(null)
+  const setProfile = useAuth((state) => state.setProfile)
 
   const form = useForm<z.infer<typeof RegisterSchema>>({
     resolver: zodResolver(RegisterSchema),
@@ -32,9 +34,8 @@ export function RegisterForm({ onLoginSuccess, onShowLogin }: RegisterFormProps)
     setApiError(null)
     try {
       const response = (await register(values)) || {}
-      console.log('response', response)
-
       if (response?.code === 200) {
+        setProfile(response?.data?.user)
         onLoginSuccess()
       } else setApiError(response.errors)
     } catch (err: any) {

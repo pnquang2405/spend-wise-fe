@@ -8,6 +8,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { login } from '@/lib/apis/auth' // Giả sử bạn có hàm login
+import { useAuth } from '@/store/auth-store'
 
 // 1. Định nghĩa Schema (đã loại bỏ 'remember')
 const LoginSchema = z.object({
@@ -22,6 +23,7 @@ interface LoginFormProps {
 
 export function LoginForm({ onLoginSuccess, onShowRegister }: LoginFormProps) {
   const [apiError, setApiError] = useState<string | null>(null)
+  const setProfile = useAuth((state) => state.setProfile)
   const form = useForm<z.infer<typeof LoginSchema>>({
     resolver: zodResolver(LoginSchema),
     defaultValues: {
@@ -39,6 +41,7 @@ export function LoginForm({ onLoginSuccess, onShowRegister }: LoginFormProps) {
       console.log('response', response)
 
       if (response?.code === 200) {
+        setProfile(response?.data?.user)
         onLoginSuccess()
       } else {
         setApiError(response.errors || 'Email hoặc mật khẩu không chính xác.')
