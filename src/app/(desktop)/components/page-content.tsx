@@ -6,13 +6,11 @@ import LandingPage from './landing-page'
 
 export default function PageContent() {
   const profile = useAuth((state) => state.profile)
-  console.log('profile', profile)
-
   const logout = useAuth((state) => state.logout)
 
   const handleLogout = () => {
     logout()
   }
 
-  return <>{profile ? <Dashboard /> : <LandingPage />}</>
+  return <>{profile ? <Dashboard profile={profile} /> : <LandingPage />}</>
 }

@@ -38,8 +38,6 @@ export function LoginForm({ onLoginSuccess, onShowRegister }: LoginFormProps) {
     setApiError(null)
     try {
       const response = (await login(values)) || {}
-      console.log('response', response)
-
       if (response?.code === 200) {
         setProfile(response?.data?.user)
         onLoginSuccess()
